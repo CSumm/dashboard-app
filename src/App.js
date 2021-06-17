@@ -1,26 +1,31 @@
-import logo from './logo.svg';
+
 import './App.css';
 import AppWs from './AppWS';
+import {useState} from 'react';
+import WaterLevelAmount from './WaterLevelAmount';
+import LevelWarning from './LevelWarning';
+import LiveChart from './LiveChart';
 
 function App() {
-  
+  const [msg, setMessage] = useState(''); 
+  const [warning, setWarning] = useState('');
+  const [warnings, setWarningArray] = useState([]);
+  const [graphData, setGraphData] = useState([]);
+
+    if(warning !== ''){
+       setWarningArray(warnings => [...warnings, warning]);
+       
+    }
+    if(msg !== ''){
+      setGraphData(graphData => [...graphData, msg]);
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <AppWs/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <AppWs setMessage={setMessage} setWarning={setWarning}/>
+        <WaterLevelAmount msg={msg}/>
+        <LevelWarning warnings={warnings}/>
+        <LiveChart liveData={graphData}/>
     </div>
   );
 }
