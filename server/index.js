@@ -4,6 +4,7 @@ const server = require('http').createServer(app);
 const WebSocket = require('ws');
 var CronJob = require('cron').CronJob;
 
+
 const wss = new WebSocket.Server({ server: server });
 
 wss.on('connection', function connection(ws) {
@@ -11,18 +12,22 @@ wss.on('connection', function connection(ws) {
       console.log('received: %s', message);
     });  
 
-    var job = new CronJob('*/30 * * * * *', function() {
+    var job = new CronJob('*/1 * * * *', function() {
       let min = 25;
-      let max = 28;
-      let waterLevel = Math.random() * (max-min)+min;
+      let max = 29;
+      let waterLevel = (Math.random() * (max-min)+min).toFixed(2);
       let warning = '';
+      let date = new Date();
 
-      if(waterLevel > 28){
-        warning = Date.now() + ` water level is too high for this time of year. Take immediate flooding prevention measures`;
+
+      if(waterLevel >= 28){
+        warning = `${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()} - water level is too high for this time of year. Take immediate flooding prevention measures`;
       }
-      
-      if(waterLevel < 26){
-        warning = Date.now() + ` water level is too low. Avoid boating on the river at this time`;
+      else if(waterLevel < 26){
+        warning = `${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()} - water level is too low. Avoid boating on the river at this time`;
+      }
+      else {
+        warning = '';
       }
 
       let obj = {waterLevel:waterLevel,warning:warning}

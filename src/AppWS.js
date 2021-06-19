@@ -2,7 +2,6 @@ import {useRef, useEffect} from 'react';
 
 export default function AppWs({setMessage, setWarning}) {
     const ws = useRef(null);
-    const ref = useRef({});
    
     useEffect(() => {
         ws.current = new WebSocket("ws://localhost:3001");
@@ -10,7 +9,6 @@ export default function AppWs({setMessage, setWarning}) {
         ws.current.onclose = () => console.log("ws closed");
         ws.current.onmessage = evt => {
             var object = JSON.parse(evt.data);
-            ref.current = object;
                setMessage(object.waterLevel);
                setWarning(object.warning);
         }
@@ -18,7 +16,7 @@ export default function AppWs({setMessage, setWarning}) {
         return () => {
             ws.current.close();
         };
-    });
+    },[setWarning,setMessage]);
 
     return (
         <div>

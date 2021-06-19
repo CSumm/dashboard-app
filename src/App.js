@@ -1,31 +1,39 @@
 
 import './App.css';
 import AppWs from './AppWS';
-import {useState} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 import WaterLevelAmount from './WaterLevelAmount';
 import LevelWarning from './LevelWarning';
 import LiveChart from './LiveChart';
 
 function App() {
-  const [msg, setMessage] = useState(''); 
+  const [msg, setMessage] = useState(' - '); 
   const [warning, setWarning] = useState('');
   const [warnings, setWarningArray] = useState([]);
   const [graphData, setGraphData] = useState([]);
+  let date = useMemo(()=>new Date(),[]);
+  const [timePassed, setTimePassed] = useState(`${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()}`);
 
-    if(warning !== ''){
-       setWarningArray(warnings => [...warnings, warning]);
-       
+ 
+  useEffect(() => {
+    date = new Date();
+    setTimePassed(`${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()}`);
+
+    if(msg !== ' - '){
+      setGraphData(graphData => [...graphData, {name: `${timePassed}`,value:msg}]);
     }
-    if(msg !== ''){
-      setGraphData(graphData => [...graphData, msg]);
-    }
+    console.log('i fire once');
+    return () => {
+
+  };
+},[msg]);
 
   return (
     <div className="App">
         <AppWs setMessage={setMessage} setWarning={setWarning}/>
         <WaterLevelAmount msg={msg}/>
-        <LevelWarning warnings={warnings}/>
-        <LiveChart liveData={graphData}/>
+        <LevelWarning warning={warning} warnings={warnings} setArray={setWarningArray}/>
+        <LiveChart graphData={graphData}/>
     </div>
   );
 }
