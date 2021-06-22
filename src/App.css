@@ -1,38 +1,220 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+fieldset {
   display: flex;
   flex-direction: column;
+  border: none;
+  padding-top: 0.5rem;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 20%;
+}
+
+input[type="email"], input[type="password"]{
+  height: 30px;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  background-color: #282c34;
+  color: #fff;
+  margin-top: 1rem;
+  padding: 0.7rem 1.3rem;
+  align-self: flex-end;
+}
+
+.btn:hover {
+  background-color: #38afcd;
+}
+
+.App {
+  display: flex;
+}
+
+.App__first-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.App__second-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.side-nav-block {
+  width: 20%;
+  background-color: #282c34;
+  height: 100vh;
+}
+
+.side-nav {
+  width: fit-content;
+  margin: 70% auto;
+}
+
+.side-nav:hover {
+  color:rgb(197, 71, 71);
+}
+
+.side-nav-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin-top:1.33rem;
+}
+
+.notification {
+  display: flex;
+  background-color: rgb(248, 248, 248);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.055);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 2rem;
+  width: 100%;
+}
+
+.notification-message {
+  display: inline-block;
+}
+
+.notification-closed {
+  display: none;
+}
+
+.notification-open {
+  display: block;
+}
+
+.close-notification {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  right:-50%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login-header {
+  font-size: 4rem;
+  line-height: 5rem;
+  color: #282c34;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-content {
+  width: 70%;
+  padding: 3rem;
 }
+
+.side-nav-block > h5 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.water-amount-block {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  padding:1rem;
+  box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+.water-amount-value {
+  margin-top: 1rem;
+  font-size: 4rem;
+}
+
+.battery-life-block {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3rem;
+  padding:1rem;
+  width: 100%;
+  box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+.live-graph-block {
+  display: inline-block;
+  padding: 2rem;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+             width: 60%;
+}
+
+.level-warning-block {
+  width: 100%;
+}
+
+.level-warning {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.level-warning_section-header {
+  text-transform: uppercase;
+}
+
+.warning-item {
+  display: flex;
+  align-items: center;
+ height: 40px;
+ padding-left: 1.375rem;
+}
+
+.warning-item:nth-of-type(1) {
+  margin-top: 1rem;
+}
+
+.warning-item:nth-of-type(odd) {
+  background-color: #f6f5a8f5;
+}
+
+.clear-warnings {
+  background-color: #b8624c;
+  color: #fff;
+  border: none;
+  padding: 1rem 1.2rem;
+  float: right;
+}
+
+.battery-icon {
+margin: 0 auto;
+}
+

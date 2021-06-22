@@ -18,13 +18,15 @@ wss.on('connection', function connection(ws) {
       let waterLevel = (Math.random() * (max-min)+min).toFixed(2);
       let warning = '';
       let date = new Date();
+      let timeOfDay = `${date.getHours()}:${(date.getMinutes()<10?'0':'') + date.getMinutes()}`;
+      let timeOfYear = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
 
 
       if(waterLevel >= 28){
-        warning = `${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()} - water level is too high for this time of year. Take immediate flooding prevention measures`;
+        warning = `${timeOfYear} ${timeOfDay} - water level is too high for this time of year. Take immediate flooding prevention measures`;
       }
       else if(waterLevel < 26){
-        warning = `${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()} - water level is too low. Avoid boating on the river at this time`;
+        warning = `${timeOfYear} ${timeOfDay} - water level is too low. Avoid boating on the river at this time`;
       }
       else {
         warning = '';

@@ -1,6 +1,6 @@
 import {useRef, useEffect} from 'react';
 
-export default function AppWs({setMessage, setWarning}) {
+export default function AppWs({setMessage, setWarning, socketCurrentState}) {
     const ws = useRef(null);
    
     useEffect(() => {
@@ -13,10 +13,14 @@ export default function AppWs({setMessage, setWarning}) {
                setWarning(object.warning);
         }
 
+        if(socketCurrentState === false){
+            ws.current.close();
+        }
+
         return () => {
             ws.current.close();
         };
-    },[setWarning,setMessage]);
+    },[setWarning,setMessage,socketCurrentState]);
 
     return (
         <div>

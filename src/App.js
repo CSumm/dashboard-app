@@ -1,10 +1,18 @@
-
+import {useState, useEffect, useMemo} from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom'
 import './App.css';
 import AppWs from './AppWS';
-import {useState, useEffect, useMemo} from 'react';
-import WaterLevelAmount from './WaterLevelAmount';
-import LevelWarning from './LevelWarning';
-import LiveChart from './LiveChart';
+import NotificationPopUp from './Components/NotificationPopUp';
+import SideNavigation from './Components/SideNavigation';
+import MainContent from './Pages/MainContent';
+import Settings from './Pages/Settings';
+import Login from './Pages/Login';
+
 
 function App() {
   const [msg, setMessage] = useState(' - '); 
@@ -13,6 +21,8 @@ function App() {
   const [graphData, setGraphData] = useState([]);
   let date = useMemo(()=>new Date(),[]);
   const [timePassed, setTimePassed] = useState(`${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()}`);
+  const [isSocketOpen, setSocketState] = useState(true);
+  const [navBarHidden, setNavBarHidden] = useState(true);
 
  
   useEffect(() => {
@@ -30,10 +40,28 @@ function App() {
 
   return (
     <div className="App">
-        <AppWs setMessage={setMessage} setWarning={setWarning}/>
-        <WaterLevelAmount msg={msg}/>
-        <LevelWarning warning={warning} warnings={warnings} setArray={setWarningArray}/>
-        <LiveChart graphData={graphData}/>
+        <Router> 
+<AppWs setMessage={setMessage} setWarning={setWarning} socketCurrentState={isSocketOpen}/>
+        {isSocketOpen === false ?  <NotificationPopUp/> : <div></div>}
+          {navBarHidden ? null: <SideNavigation/>}
+          <Switch>
+          <Route exact path="/">
+          <Redirect to="/login" />
+            </Route>
+            <Route exact path="/dashboard">
+            <MainContent socketData={msg} graphData={graphData} warning={warning} warnings={warnings} setWarningArray={setWarningArray} setSocketState={setSocketState} setNavBarHidden={setNavBarHidden}/>
+            </Route>
+            <Route exact path="/settings">
+            <Settings setNavBarHidden={setNavBarHidden}/>
+            </Route>
+            <Route exact path="/login">
+            <Login setNavBarHidden={setNavBarHidden}/>
+            </Route>
+            <Route exact path="/logout">
+            <Redirect to="/login" />
+            </Route>
+          </Switch>
+        </Router>
     </div>
   );
 }
