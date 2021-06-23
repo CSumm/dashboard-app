@@ -1,4 +1,5 @@
-import { useHistory } from "react-router-dom"; 
+import { useHistory } from "react-router-dom";
+import logo from '../floatmellow-logo.png';
 
 export default function Login({setNavBarHidden}) {
 setNavBarHidden(true);
@@ -9,15 +10,15 @@ function handleSubmit() {
 
     return (
         <div className="login">
-            
           <form className="login-form" onSubmit={handleSubmit}>
+                <img className="logo" src={logo} alt="Floatmellow logo in blue"/>
           <h1 className="login-header">Login</h1>
-              <fieldset className="username-fieldset">
+              <fieldset className="vertical-fieldset">
               <label htmlFor="#email">Email</label>
               <input id="email" type="email" required/>
               </fieldset>
-              <fieldset className="password-fieldset">
-              <label htmlFor="#password">password</label>
+              <fieldset className="vertical-fieldset">
+              <label htmlFor="#password">Password</label>
               <input id="password" type="password" required/>
               </fieldset>
               <button type="submit" className="btn btn-primary">Login</button>

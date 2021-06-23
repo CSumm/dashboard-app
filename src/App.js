@@ -13,7 +13,6 @@ import MainContent from './Pages/MainContent';
 import Settings from './Pages/Settings';
 import Login from './Pages/Login';
 
-
 function App() {
   const [msg, setMessage] = useState(' - '); 
   const [warning, setWarning] = useState('');
@@ -23,7 +22,6 @@ function App() {
   const [timePassed, setTimePassed] = useState(`${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()}`);
   const [isSocketOpen, setSocketState] = useState(true);
   const [navBarHidden, setNavBarHidden] = useState(true);
-
  
   useEffect(() => {
     date = new Date();
@@ -42,7 +40,7 @@ function App() {
     <div className="App">
         <Router> 
 <AppWs setMessage={setMessage} setWarning={setWarning} socketCurrentState={isSocketOpen}/>
-        {isSocketOpen === false ?  <NotificationPopUp/> : <div></div>}
+        {isSocketOpen === false ?  <NotificationPopUp lowBatteryError={true}/> : <div></div>}
           {navBarHidden ? null: <SideNavigation/>}
           <Switch>
           <Route exact path="/">
