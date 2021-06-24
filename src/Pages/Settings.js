@@ -2,10 +2,9 @@ import { useState } from "react";
 import SettingsComponent from "../Components/SettingsComponent";
 import NotificationPopUp from "../Components/NotificationPopUp";
 
-export default function Settings() {
+export default function Settings()
+{
 
-    const [smsLabel, setSMSLabel] = useState(false);
-    const [emailLabel, setEmailLabel] = useState(false);
     const [settingsChanged, setSettingsChanged] = useState(false);
 
     function changeSettings(){
@@ -18,16 +17,12 @@ export default function Settings() {
             <NotificationPopUp settingsChanged={settingsChanged}/>
             <SettingsComponent 
             heading="Device Information" 
-            displayDeviceInfo={true} 
+            displayDeviceInfo={true}
             changeSettings={changeSettings}
             />
             <SettingsComponent 
             heading="Notifications" 
             displayNotificationInfo={true} 
-            smsLabel={smsLabel} 
-            setSMSLabel={setSMSLabel}
-            emailLabel={emailLabel}
-            setEmailLabel={setEmailLabel}
             changeSettings={changeSettings}
             />
             <div className="settings-block">

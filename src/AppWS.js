@@ -1,7 +1,9 @@
-import {useRef, useEffect} from 'react';
+import {useRef, useEffect, useContext} from 'react';
+import { DataContext } from './DataContext';
 
-export default function AppWs({setMessage, setWarning, socketCurrentState}) {
+export default function AppWs() {
     const ws = useRef(null);
+    const {setWarning, setLiveData, socketCurrentState} = useContext(DataContext);
    
     useEffect(() => {
         ws.current = new WebSocket("ws://localhost:3001");
@@ -9,7 +11,7 @@ export default function AppWs({setMessage, setWarning, socketCurrentState}) {
         ws.current.onclose = () => console.log("ws closed");
         ws.current.onmessage = evt => {
             var object = JSON.parse(evt.data);
-               setMessage(object.waterLevel);
+               setLiveData(object.waterLevel);
                setWarning(object.warning);
         }
 
@@ -20,7 +22,7 @@ export default function AppWs({setMessage, setWarning, socketCurrentState}) {
         return () => {
             ws.current.close();
         };
-    },[setWarning,setMessage,socketCurrentState]);
+    },[setWarning,setLiveData,socketCurrentState]);
 
     return (
         <div>

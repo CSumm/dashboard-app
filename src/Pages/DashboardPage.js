@@ -2,12 +2,22 @@ import WaterLevelAmount from '../Components/WaterLevelAmount';
 import LevelWarning from '../Components/LevelWarning';
 import LiveChart from '../Components/LiveChart';
 import BatteryStatus from '../Components/BatteryStatus';
+import { useContext } from 'react';
+import { DataContext } from '../DataContext';
 
 
 
-export default function MainContent({ socketData, graphData, warning, warnings, setWarningArray, setSocketState, setNavBarHidden }) {
-   
-        setNavBarHidden(false);
+export default function DashboardPage({setNavBarHidden}) {
+    const { 
+        socketData, 
+        graphData,
+        warning,
+        warnings, 
+        setWarningArray, 
+        setSocketState } = useContext(DataContext);
+        
+    
+    setNavBarHidden(false);
    
 
     return (
