@@ -19,7 +19,7 @@ export default function LevelWarning({warning,warnings, setArray}) {
     return (
         <div className="level-warning-block">
             <h4 className="level-warning_section-header">Warnings</h4>
-            <ul className="level-warning">{warnings.length >= 1?listItems:<p>There are no warnings currently</p>}</ul>
+            <ul className="level-warning">{warnings.length >= 1?listItems:<li>There are no warnings currently</li>}</ul>
             <button className="btn clear-warnings" onClick={clearWarningList}>Clear old warnings</button>
         </div>
     );

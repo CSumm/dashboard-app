@@ -1,6 +1,8 @@
 import {useState} from "react";
 import { useInterval } from "../useInterval";
 import './BatteryStatus.css';
+import { useContext } from "react";
+import { DataContext } from "../DataContext";
 
 const BatteryIcon = (props) => {
 
@@ -23,8 +25,8 @@ return (
 
 export default function BatteryStatus({setSocketState}) {
 
-   const [batteryLife, setBatteryLife] = useState(100);
-   const [delay,setDelay] = useState(300000);
+   const {batteryLife, setBatteryLife} = useContext(DataContext)
+   const [delay] = useState(300000);
    const [isRunning, setIsRunning] = useState(true);
 
    if(batteryLife === 0){

@@ -1,7 +1,16 @@
+input:read-only {
+  pointer-events: none;
+}
+
+.switch {
+  margin-left: 5%;
+  justify-self: flex-end;
+}
+
 .settings-block {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 30%;
     margin: 2% auto;
   }
   
@@ -12,7 +21,7 @@
   .device-info-form {
     align-content: center;
     margin: 1rem 0;
-    width: 50%;
+    width: 100%;
   }
   
   .uuid-input {
@@ -21,9 +30,26 @@
   }
   
   .settings-notification-form {
+    margin: 0;
     width: 100%;
   }
+
+  .horizontal-fieldset {
+    display: flex;
+    width: 100%;
+  }
+
+  .horizontal-fieldset > label {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+  }
+
+
   
   .email-notification-block {
     flex-direction: column;
   }
+
+  

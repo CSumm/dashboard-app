@@ -41,6 +41,7 @@ function App() {
   const [currentReceivingMobile, setReceivingMobile] = useState('');
   const [isCheckedSMS, setCheckedSMS] = useState(false);
   const [isCheckedEmail, setCheckedEmail] = useState(false);
+  const [batteryLife, setBatteryLife] = useState(100);
 
 
   // gets saved data automatically from localstorage if it exists and populates the state fields
@@ -52,10 +53,8 @@ function App() {
     if(data){
       setRegisteredOwner(JSON.parse(data).registeredOwner);
      setSMSLabel(JSON.parse(data).currentSMSLabel);
-     setSMSSwitch(JSON.parse(data).isSMSSwitchOn);
      setCheckedSMS(JSON.parse(data).isCheckedSMS);
      setEmailLabel(JSON.parse(data).currentEmailLabel);
-     setEmailSwitch(JSON.parse(data).isEmailSwitchOn);
      setCheckedEmail(JSON.parse(data).isCheckedEmail);
      setReceivingEmail(JSON.parse(data).currentReceivingEmail);
      setReceivingMobile(JSON.parse(data).currentReceivingMobile);
@@ -67,10 +66,8 @@ function App() {
      localStorage.setItem("settings",JSON.stringify({
          registeredOwner: registeredOwner,
          currentSMSLabel: currentSMSLabel,
-         isSMSSwitchOn: isSMSSwitchOn,
          isCheckedSMS: isCheckedSMS,
          currentEmailLabel: currentEmailLabel,
-         isEmailSwitchOn: isEmailSwitchOn,
          isCheckedEmail: isCheckedEmail,
          currentReceivingEmail: currentReceivingEmail,
          currentReceivingMobile: currentReceivingMobile
@@ -103,7 +100,9 @@ function App() {
             warnings,
             liveData,
             setWarningArray,
-            setSocketState
+            setSocketState,
+            batteryLife,
+            setBatteryLife
           }}>
           <SettingsContext.Provider 
           value={

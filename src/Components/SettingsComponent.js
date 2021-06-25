@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Switch from "react-switch";
 import { SettingsContext } from "../SettingsContext";
 import './SettingsComponent.css';
 
@@ -12,16 +13,12 @@ export default function SettingsComponent({
         productID,
         registeredOwner,
         currentSMSLabel,
-        isSMSSwitchOn,
         currentEmailLabel,
-        isEmailSwitchOn,
         currentReceivingEmail,
         currentReceivingMobile,
         setRegisteredOwner,
         setSMSLabel,
-        setSMSSwitch,
         setEmailLabel,
-        setEmailSwitch,
         setReceivingEmail,
         setReceivingMobile,
         isCheckedSMS,
@@ -38,14 +35,12 @@ export default function SettingsComponent({
     //handling sms switch on change
   function turnOnSMS(e) {
         setSMSLabel(!currentSMSLabel);
-        setSMSSwitch(!e.target.value);
         setCheckedSMS(!isCheckedSMS);
     }
 
     //handling emails switch on change 
      function turnOnEmails(e) {
         setEmailLabel(!currentEmailLabel);
-        setEmailSwitch(!e.target.value);
         setCheckedEmail(!isCheckedEmail);
     }
 
@@ -88,24 +83,24 @@ export default function SettingsComponent({
             {displayNotificationInfo ? 
             <form className="settings-notification-form">
                    <fieldset className="horizontal-fieldset">
+                       
                 <label 
                 className="email-notification-switch-label" 
                 htmlFor="#email-notification-switch">
-                    <span>
                     {currentEmailLabel ? 
                     'Email notification currently on': 
                     'Email notification currently off'
                     }
-                    </span>
-                    <span></span>
+                    <Switch
+                    className="switch"
+                    id="email-notification-switch"
+                    onColor="#38afcd" 
+                    onChange={turnOnEmails} 
+                    checked={isCheckedEmail}
+                    uncheckedIcon={false}
+                    checkedIcon={false} 
+                    />
                 </label>
-                <input
-                className="switch" 
-                id="email-notification-switch" 
-                type="checkbox"
-                checked={isCheckedEmail}
-                value={isEmailSwitchOn} 
-                onChange={turnOnEmails}/>
                 </fieldset>
 
 
@@ -130,14 +125,16 @@ export default function SettingsComponent({
                     'SMS notification currently on': 
                     'SMS notification currently off'
                     }
+                         <Switch 
+                    className="switch"
+                    id="sms-notification-switch"
+                    onColor="#38afcd"  
+                    onChange={turnOnSMS} 
+                    checked={isCheckedSMS}
+                    uncheckedIcon={false}
+                    checkedIcon={false} 
+                    />
                 </label>
-                <input
-                className="switch"  
-                id="sms-notification-switch" 
-                type="checkbox" 
-                checked={isCheckedSMS}
-                value={isSMSSwitchOn}
-                onChange={turnOnSMS}/>
                 </fieldset>
 
                 {currentSMSLabel ?

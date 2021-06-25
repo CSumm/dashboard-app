@@ -1,7 +1,10 @@
-.logo--sidenav {
+
+
+.logo.logo--sidenav {
+  width: 50%;
     position: relative;
     top: 12rem;
-    left: 2.5rem;
+    left: 5rem;
   }
 
 .logo-icon {
