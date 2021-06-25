@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './NotificationPopUp.css';
 
 export default function NotificationPopUp({lowBatteryError, settingsChanged}) {
     const [isNotifOpen, setOpen] = useState(true);

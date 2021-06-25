@@ -1,0 +1,61 @@
+.logo--sidenav {
+    position: relative;
+    top: 12rem;
+    left: 2.5rem;
+  }
+
+.logo-icon {
+    position: relative;
+    background-image: url("../logotype.png");
+    width: 100%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 15%;
+    left: 20%;
+  
+    z-index: 999;
+  }
+  
+  .user-image {
+    position: relative;
+    width: 30%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    top: 10%;
+    left: 35%;
+    z-index: 999;
+  }
+  
+  .side-nav-block {
+    width: 20%;
+    background-color: #282c34;
+    height: 100vh;
+  }
+
+  .side-nav-block > h5 {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  .side-nav {
+    width: fit-content;
+    margin: 40% auto;
+  }
+  
+  .side-nav:hover {
+    color:rgb(197, 71, 71);
+  }
+  
+  .side-nav-link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-top:1.33rem;
+  }
+  
+  .side-nav-link:hover {
+    color: rgba(255, 255, 255, 0.609);
+  }

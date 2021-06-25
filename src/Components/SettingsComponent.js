@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { SettingsContext } from "../SettingsContext";
+import './SettingsComponent.css';
 
 export default function SettingsComponent({
     heading, 

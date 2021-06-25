@@ -1,4 +1,5 @@
 import { useEffect} from "react";
+import './LevelWarning.css';
 
 export default function LevelWarning({warning,warnings, setArray}) {
     useEffect(() => {    

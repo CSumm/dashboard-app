@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SettingsComponent from "../Components/SettingsComponent";
 import NotificationPopUp from "../Components/NotificationPopUp";
+import './Settings.css';
 
 export default function Settings()
 {

@@ -4,6 +4,7 @@ import LiveChart from '../Components/LiveChart';
 import BatteryStatus from '../Components/BatteryStatus';
 import { useContext } from 'react';
 import { DataContext } from '../DataContext';
+import './DashboardPage.css';
 
 
 
@@ -22,14 +23,14 @@ export default function DashboardPage({setNavBarHidden}) {
 
     return (
         <div className="main-content">
-          <div className="App__first-row">
+          <div className="first-row">
               <div className="small-card-section">
         <WaterLevelAmount msg={socketData}/>
         <BatteryStatus setSocketState={setSocketState}/>
         </div>
         <LiveChart graphData={graphData}/>
         </div>
-        <div className="App__second-row">
+        <div className="second-row">
         <LevelWarning warning={warning} warnings={warnings} setArray={setWarningArray}/>
         </div>
         </div>

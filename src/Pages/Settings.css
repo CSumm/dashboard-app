@@ -1,0 +1,9 @@
+.settings-page {
+    width: 60%;
+  }
+  
+  .settings-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+  }

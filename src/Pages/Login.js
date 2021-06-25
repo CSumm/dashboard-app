@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import logo from '../floatmellow-logo.png';
+import './Login.css';
 
 export default function Login({setNavBarHidden}) {
 setNavBarHidden(true);

@@ -1,0 +1,29 @@
+.settings-block {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 2% auto;
+  }
+  
+  .settings-block > button {
+    align-self: flex-end;
+  }
+  
+  .device-info-form {
+    align-content: center;
+    margin: 1rem 0;
+    width: 50%;
+  }
+  
+  .uuid-input {
+    background-color: rgb(214, 214, 214);
+    height: 20px;
+  }
+  
+  .settings-notification-form {
+    width: 100%;
+  }
+  
+  .email-notification-block {
+    flex-direction: column;
+  }

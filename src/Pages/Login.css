@@ -1,0 +1,28 @@
+
+.logo {
+    width: 60%;
+    padding: 2rem;
+  }
+  
+  .login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("../floatmellow_background.svg");
+    background-repeat: repeat;
+    background-size: cover;
+  }
+  
+  .login-header {
+    margin-top: 1rem;
+    font-size: 4rem;
+    line-height: 5rem;
+    color: #282c34;
+  }
+  
+  .login-form {
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.1);
+  }

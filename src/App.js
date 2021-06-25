@@ -42,6 +42,9 @@ function App() {
   const [isCheckedSMS, setCheckedSMS] = useState(false);
   const [isCheckedEmail, setCheckedEmail] = useState(false);
 
+
+  // gets saved data automatically from localstorage if it exists and populates the state fields
+
   useEffect(() => {
     const data = localStorage.getItem("settings");
     console.log(data);
@@ -59,6 +62,7 @@ function App() {
     }
  },[])
 
+ // sets current state fields into localstorage autpmatically
  useEffect(() => {
      localStorage.setItem("settings",JSON.stringify({
          registeredOwner: registeredOwner,
@@ -73,6 +77,8 @@ function App() {
      }));
  })
 
+ /* creates a new date variable and is appended along with 
+ live data to be put in the graph data array */
   useEffect(() => {
     date = new Date();
     setTimePassed(`${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()}`);
@@ -82,6 +88,8 @@ function App() {
     }
 },[liveData]);
 
+
+// where the app starts
   return (
     <div className="App">
         <Router>

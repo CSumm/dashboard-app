@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DataContext } from "../DataContext";
+import './WaterLevelAmount.css';
 
 export default function WaterLevelAmount() {
 

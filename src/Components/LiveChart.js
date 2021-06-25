@@ -1,5 +1,6 @@
 
 import {XAxis,YAxis,Area,AreaChart,Tooltip} from 'recharts';
+import './LiveChart.css';
 
 export default function LiveChart({graphData}) {
 

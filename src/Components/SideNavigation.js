@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import userImage from '../selfie_summers.jpg';
 import altLogo from '../floatmellow-logo-alt.png';
+import './SideNavigation.css';
 
 export default function SideNavigation() {
     return (

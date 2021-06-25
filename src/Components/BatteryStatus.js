@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { useInterval } from "../useInterval";
+import './BatteryStatus.css';
 
 const BatteryIcon = (props) => {
 
