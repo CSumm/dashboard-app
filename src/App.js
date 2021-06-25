@@ -77,6 +77,9 @@ function App() {
  /* creates a new date variable and is appended along with 
  live data to be put in the graph data array */
   useEffect(() => {
+
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     date = new Date();
     setTimePassed(`${date.getHours()}: ${(date.getMinutes()<10?'0':'') + date.getMinutes()}`);
 
