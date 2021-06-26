@@ -20,13 +20,7 @@ box-shadow:  20px 20px 60px #bebebe,
 
 @media (min-width:428px){
   .live-graph-block {
-    display: inline-flex;
-    flex-direction: column;
-    padding: 3rem 2rem;
-    margin-top: 3rem;
-  box-shadow:  20px 20px 60px #bebebe,
-               -20px -20px 60px #ffffff;
-               width: 85%;
+    width: 85%;
   }
 
   .recharts-surface {
@@ -40,10 +34,8 @@ box-shadow:  20px 20px 60px #bebebe,
     .live-graph-block {
       padding: 2rem;
       width: 60%;
+      height: auto;
       margin-top: initial;
-    }
-    .recharts-surface {
-      margin: 1rem 0 1rem -2rem;
     }
   }
 
