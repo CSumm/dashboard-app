@@ -1,4 +1,25 @@
 .live-graph-block {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+             width: 80%;
+             height: 100%;
+}
+
+.recharts-responsive-container {
+  width: 100%;
+  min-width: 280px;
+}
+
+.recharts-surface {
+  margin: 1rem 0 1rem -4rem;
+}
+
+@media (min-width:428px){
+  .live-graph-block {
     display: inline-flex;
     flex-direction: column;
     padding: 3rem 2rem;
@@ -11,6 +32,9 @@
   .recharts-surface {
     margin: 1rem 0 1rem -2rem;
   }
+}
+
+
 
   @media (min-width: 1280px){
     .live-graph-block {

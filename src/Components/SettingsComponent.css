@@ -1,5 +1,6 @@
 input:read-only {
   pointer-events: none;
+  width: 100%;
 }
 
 .switch {
@@ -11,11 +12,13 @@ input:read-only {
     display: flex;
     flex-direction: column;
     width: 70%;
+    max-width: 800px;
     margin: 2% auto;
   }
   
   .settings-block > button {
     align-self: flex-end;
+    margin: 0 0 3rem 0;
   }
   
   .device-info-form {
@@ -44,6 +47,7 @@ input:read-only {
     justify-content: space-between;
     align-content: center;
     width: 100%;
+    font-size: 1.2rem;
   }
 
   .email-notification-block {

@@ -2,9 +2,12 @@
   min-width: 150px;
   max-width: 20%;
     position: relative;
+    justify-self: center;
+    align-self: center;
     top: 0rem;
     left: 1rem;
-    order: 1;
+    order: 2;
+    margin-top: 8rem;
   }
 
 .logo-icon {
@@ -12,18 +15,56 @@
     background-image: url("../logotype.png");
     display: none;
   }
+
+  .mobile-icon {
+    display: block;
+    width: 20%;
+    margin: 1rem auto;
+  }
   
   .user-image {
     display: none;
   }
-  
-  .side-nav-block {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+
+  .menu {
+    position: fixed;
     width: 100%;
     background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    transform: translateX(-999px);
+    transition: transform .5s ease-in-out;
+  }
+
+  .menu-toggle {
+    position: fixed;
+    top: 2rem;
+    left: 1rem;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.602);
+    font-size: 2rem;
+  }
+
+  .menu-toggle--close {
+    position: relative;
+    top: 2rem;
+    left: 1rem;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .side-nav-block {
+    display: flex;
+    
+    z-index: 100001;
+    width: 100%;
   }
 
   .side-nav-block > h5 {
@@ -33,9 +74,12 @@
   
   .side-nav {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: fit-content;
-    order: 2;
+    align-self: center;
+    margin-top: 5rem;
+    order: 1;
     padding: 0 2rem;
   }
   
@@ -47,7 +91,7 @@
     display: inline-block;
     color: #fff;
     text-decoration: none;
-    font-size: max(1vw, 18px);
+    font-size: max(1vw, 28px);
     margin: 1rem 0.5rem;
   }
   
@@ -55,13 +99,93 @@
     color: rgba(255, 255, 255, 0.609);
   }
 
+@media (min-width: 480px){
+  .logo.logo--sidenav {
+    min-width: 150px;
+    max-width: 20%;
+      justify-content: center;
+      margin: 0;
+      top: 0rem;
+      left: 1rem;
+      order: 1;
+    }
+  
+  .logo-icon {
+      position: relative;
+      background-image: url("../logotype.png");
+      display: none;
+    }
+
+    .mobile-icon {
+      display: none;
+    }
+    
+    .user-image {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-toggle--close {
+      display: none;
+    }
+
+    .menu {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      justify-content: space-around;
+      background-color: #282c34;
+      transform: initial !important;
+    }
+  
+    .menu > h5 {
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .side-nav-block {
+      position: relative;
+      width: 100%;
+    }
+    
+    .side-nav {
+      flex-direction: row;
+      align-items: center;
+      width: fit-content;
+      order: 2;
+      padding: 0 2rem;
+      margin-top: 0;
+    }
+    
+    .side-nav:hover {
+      color:rgb(197, 71, 71);
+    }
+    
+    .side-nav-link {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      font-size: max(1vw, 18px);
+      margin: 1rem 0.5rem;
+    }
+    
+    .side-nav-link:hover {
+      color: rgba(255, 255, 255, 0.609);
+    }
+}
+
+
 @media (min-width: 1280px){
   .logo.logo--sidenav {
     width: 50%;
-      position: relative;
-      top: 10rem;
-      left: 6rem;
       order: 2;
+      align-self: center;
+      margin-right: 2rem;
     }
   
   .logo-icon {
@@ -87,6 +211,12 @@
       left: 35%;
       z-index: 999;
     }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     
     .side-nav-block {
       position: relative;
@@ -96,7 +226,6 @@
       flex-direction: column;
       width: 20%;
       background-color: #282c34;
-      height: 100vh;
       z-index: 1000;
     }
   

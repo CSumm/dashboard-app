@@ -16,7 +16,7 @@ button[type="submit"]{
 
 .logo {
   display: block;
-    width: 40%;
+    width: 60%;
     align-self: flex-end;
     padding: 2rem 0;
     margin-right: 6%;
@@ -43,23 +43,77 @@ button[type="submit"]{
     width: fit-content;
     justify-content: flex-end;
     background-color: rgba(255, 255, 255, 0.37);
+    padding: 2rem;
   }
   
   .login-header {
-    width: 90%;
-    font-size: 4rem;
-    line-height: 3.8rem;
-    color: #282c34c9;
+    width: 100%;
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+    color: hsla(220, 13%, 18%, 0.788);
     padding: 2rem;
   }
   
   .login-form {
-    margin-top: 6rem;
-    width: 80%;
+    margin: 2rem auto 6rem auto;
+    width: 60%;
     background-color: #fff;
     padding: 2rem;
     box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.1);
   }
+
+@media (min-width: 428px){
+  
+  .logo {
+    display: block;
+      width: 40%;
+      align-self: flex-end;
+      padding: 2rem 0;
+      margin-right: 6%;
+    }
+  
+    .vertical-fieldset {
+      padding: 1rem 0;
+    }
+    
+    .login {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: url("../floatmellow_background.svg");
+      background-repeat: repeat;
+      background-size: cover;
+    }
+  
+    .login-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: fit-content;
+      justify-content: flex-end;
+      background-color: rgba(255, 255, 255, 0.37);
+    }
+    
+    .login-header {
+      width: 90%;
+      max-width: 800px;
+      font-size: 3rem;
+      line-height: 3rem;
+      color: #282c34c9;
+      padding: 2rem;
+      justify-self: center;
+    }
+    
+    .login-form {
+      margin-top: 3rem;
+      width: 80%;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 2rem;
+      box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.1);
+    }
+}
 
 
 @media (min-width: 1280px){
