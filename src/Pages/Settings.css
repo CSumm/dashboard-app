@@ -1,9 +1,19 @@
 .settings-page {
+  width: 100%;
+}
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+@media (min-width: 1280px){
+  .settings-page {
     width: 60%;
   }
   
   .settings-container {
     display: flex;
-    flex-direction: column;
-    margin-top: 10%;
   }
+}

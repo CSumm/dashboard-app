@@ -32,7 +32,7 @@ function passwordValueChange(e){
             <div className="login-heading">
             <img className="logo" src={logo} alt="Floatmellow logo in blue"/>
             <h1 className="login-header">
-                Your only flood protection device you'll <span className="emphasis">ever</span> need.
+                The only flood protection device you'll <span className="emphasis">ever</span> need.
             </h1>
             </div>
           <form className="login-form" onSubmit={handleSubmit}>

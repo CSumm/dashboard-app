@@ -3,7 +3,7 @@ import { DataContext } from './DataContext';
 
 export default function AppWs() {
     const ws = useRef(null);
-    const {setWarning, setLiveData, socketCurrentState} = useContext(DataContext);
+    const {setWarning, setLiveData, isSocketOpen} = useContext(DataContext);
    
     useEffect(() => {
         ws.current = new WebSocket("ws://localhost:3001");
@@ -15,14 +15,14 @@ export default function AppWs() {
                setWarning(object.warning);
         }
 
-        if(socketCurrentState === false){
+        if(isSocketOpen === false){
             ws.current.close();
         }
 
         return () => {
             ws.current.close();
         };
-    },[setWarning,setLiveData,socketCurrentState]);
+    },[setWarning,setLiveData,isSocketOpen]);
 
     return (
         <div>

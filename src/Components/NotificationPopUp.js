@@ -7,7 +7,7 @@ export default function NotificationPopUp({lowBatteryError, settingsChanged}) {
     <div className="notification">
     <p className="notification-message">Your FloatMellow is offline. 
     Check if the battery is charged or registered correctly with the app. 
-    Then, refresh the app</p>
+    Then, refresh the app.</p>
     <button className="close-notification" onClick={closeNotif}>X</button>
     </div>
     );

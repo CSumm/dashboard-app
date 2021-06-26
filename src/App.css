@@ -3,8 +3,9 @@
   padding: 0;
 }
 
-html {
+body,html {
   overflow-x: hidden;
+  width: 100vw;
 }
 form {
   display: flex;
@@ -43,6 +44,16 @@ input:read-only
 
 .App {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1280px){
+  .App {
+    display: flex;
+    flex-direction: row;
+    align-items: initial;
+  }
 }
 
 .btn {

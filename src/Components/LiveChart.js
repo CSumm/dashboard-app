@@ -1,5 +1,5 @@
 
-import {XAxis,YAxis,Area,AreaChart,Tooltip} from 'recharts';
+import {XAxis,YAxis,Area,AreaChart,Tooltip,ResponsiveContainer} from 'recharts';
 import './LiveChart.css';
 
 export default function LiveChart({graphData}) {
@@ -8,6 +8,7 @@ export default function LiveChart({graphData}) {
     return (
         <div className="live-graph-block">
             <h3 className="graph-heading">Current water level (metres) by hour</h3>
+            <ResponsiveContainer width="100%" height={300}>
             <AreaChart
   width={730}
   height={250}
@@ -21,6 +22,7 @@ export default function LiveChart({graphData}) {
   <Area dataKey="value" stroke="#38afcd" fill="#38afcd" />
   <Tooltip />
 </AreaChart>
+</ResponsiveContainer>
         </div>
     );
 }

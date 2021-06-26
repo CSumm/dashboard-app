@@ -1,50 +1,42 @@
-
-
 .logo.logo--sidenav {
-  width: 50%;
+  min-width: 150px;
+  max-width: 20%;
     position: relative;
-    top: 12rem;
-    left: 5rem;
+    top: 0rem;
+    left: 1rem;
+    order: 1;
   }
 
 .logo-icon {
     position: relative;
     background-image: url("../logotype.png");
-    width: 100%;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    top: 15%;
-    left: 20%;
-  
-    z-index: 999;
+    display: none;
   }
   
   .user-image {
-    position: relative;
-    width: 30%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 50%;
-    top: 10%;
-    left: 35%;
-    z-index: 999;
+    display: none;
   }
   
   .side-nav-block {
-    width: 20%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
     background-color: #282c34;
-    height: 100vh;
   }
 
   .side-nav-block > h5 {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   
   .side-nav {
+    display: flex;
+    align-items: center;
     width: fit-content;
-    margin: 40% auto;
+    order: 2;
+    padding: 0 2rem;
   }
   
   .side-nav:hover {
@@ -52,13 +44,85 @@
   }
   
   .side-nav-link {
-    display: block;
+    display: inline-block;
     color: #fff;
     text-decoration: none;
-    font-size: 1.3rem;
-    margin-top:1.33rem;
+    font-size: max(1vw, 18px);
+    margin: 1rem 0.5rem;
   }
   
   .side-nav-link:hover {
     color: rgba(255, 255, 255, 0.609);
   }
+
+@media (min-width: 1280px){
+  .logo.logo--sidenav {
+    width: 50%;
+      position: relative;
+      top: 10rem;
+      left: 6rem;
+      order: 2;
+    }
+  
+  .logo-icon {
+    display: block;
+      width: 100%;
+      height: 100px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 15%;
+      left: 20%;
+    
+      z-index: 999;
+    }
+    
+    .user-image {
+      display: block;
+      position: relative;
+      width: 30%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-radius: 50%;
+      top: 10%;
+      left: 35%;
+      z-index: 999;
+    }
+    
+    .side-nav-block {
+      position: relative;
+      display: flex;
+      justify-content: initial;
+      align-items:initial;
+      flex-direction: column;
+      width: 20%;
+      background-color: #282c34;
+      height: 100vh;
+      z-index: 1000;
+    }
+  
+    .side-nav-block > h5 {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+    
+    .side-nav {
+      flex-direction: column;
+      width: fit-content;
+      margin: 40% auto;
+      order: 1;
+    }
+    
+    .side-nav:hover {
+      color:rgb(197, 71, 71);
+    }
+    
+    .side-nav-link {
+      display: block;
+      font-size: 1.3rem;
+      margin-top:1.33rem;
+    }
+    
+    .side-nav-link:hover {
+      color: rgba(255, 255, 255, 0.609);
+    }
+}
