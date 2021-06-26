@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SettingsComponent from "../Components/SettingsComponent";
 import NotificationPopUp from "../Components/NotificationPopUp";
 import './Settings.css';
@@ -7,6 +7,10 @@ export default function Settings()
 {
 
     const [settingsChanged, setSettingsChanged] = useState(false);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     function changeSettings(){
         setSettingsChanged(true);

@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import logo from '../floatmellow-logo.png';
 import './Login.css';
@@ -9,6 +9,10 @@ setNavBarHidden(true);
 let history = useHistory();
 const [passwordValue, setPasswordValue] = useState('');
 const [validationError, setValidationError] = useState(null);
+
+useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
 
 function handleSubmit(e) {

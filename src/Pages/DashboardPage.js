@@ -2,7 +2,7 @@ import WaterLevelAmount from '../Components/WaterLevelAmount';
 import LevelWarning from '../Components/LevelWarning';
 import LiveChart from '../Components/LiveChart';
 import BatteryStatus from '../Components/BatteryStatus';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { DataContext } from '../DataContext';
 import './DashboardPage.css';
 
@@ -16,10 +16,12 @@ export default function DashboardPage({setNavBarHidden}) {
         warnings, 
         setWarningArray, 
         setSocketState } = useContext(DataContext);
-        
     
     setNavBarHidden(false);
    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     return (
         <div className="main-content">
