@@ -83,5 +83,6 @@ button[type="submit"]{
     
     .login-form {
       width: 20%;
+      margin: 0 35%;
     }
 }
