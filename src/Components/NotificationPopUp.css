@@ -17,12 +17,13 @@
 
 .notification--green > .close-notification {
   color: #fff;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .notification-message {
   display: inline-block;
   width: 80%;
+  padding: 0 1rem;
 }
 
 .notification-closed {
