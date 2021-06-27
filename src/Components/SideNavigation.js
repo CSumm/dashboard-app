@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import userImage from '../selfie_summers.jpg';
 import altLogo from '../floatmellow-logo-alt.png';
 import { HiMenuAlt2 } from "react-icons/hi";
-import { useRef} from "react";
+import { useRef, useState} from "react";
 import './SideNavigation.css';
 import mobileLogo from '../logotype_alt.png';
 import {
@@ -13,13 +13,14 @@ import useScrollBlock from '../useScrollBlock';
 export default function SideNavigation() {
 const menuRef = useRef(null);
 const [width] = useWindowSize({FPS: 60});
+const [isMenuOpen, setMenuOpen] = useState(false);
 
 const [blockScroll, allowScroll] = useScrollBlock();
 
 
     function toggleMenu(){ 
         if(width <= 480){
-        menuRef.current.style.transform="translateX(0)";
+            setMenuOpen(true);
         blockScroll();
         }
         else {
@@ -29,7 +30,7 @@ const [blockScroll, allowScroll] = useScrollBlock();
 
     function closeMenu(){
         if(width <= 480){
-          menuRef.current.style.transform="translateX(-999px)";
+            setMenuOpen(false);
         }
         allowScroll();
         }
@@ -40,7 +41,7 @@ const [blockScroll, allowScroll] = useScrollBlock();
             <button className="menu-toggle" onClick={toggleMenu}>
                 <HiMenuAlt2 fill="#000"/>
             </button>
-            <div className="menu"ref={menuRef}>
+            <div className={isMenuOpen ? "menu is-active": "menu menu-mobile"} ref={menuRef}>
             <button className="menu-toggle--close" onClick={closeMenu}>
                 X
             </button>
