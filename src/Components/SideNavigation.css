@@ -4,6 +4,7 @@
     position: relative;
     justify-self: center;
     align-self: center;
+    background-color: transparent;
     top: 0rem;
     left: 1rem;
     order: 2;
