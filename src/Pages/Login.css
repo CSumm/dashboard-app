@@ -13,7 +13,7 @@ button[type="submit"]{
 .logo {
   display: block;
     width: 60%;
-    align-self: flex-end;
+    align-self: flex-start;
     padding: 2rem 2rem;
     margin-right: 6%;
     background-color: #38afcd;
@@ -24,24 +24,26 @@ button[type="submit"]{
   }
   
   .login {
+    display: flex;
     position: relative;
     width: 100%;
     height: 100vh;
     padding-bottom: 10rem;
-    display: flex;
+    
     flex-direction: column;
-    background:linear-gradient(0deg, rgba(54, 54, 54, 0.3), rgba(54, 54, 54, 0.3)), url(../floatmellow_img1.jpg);
+    background:linear-gradient(0deg, rgba(54, 54, 54, 0.3), rgba(54, 54, 54, 0.3)), url(../floatmellow_img2_mobile.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: fixed;
   }
 
   .login-heading {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: fit-content;
-    justify-content: flex-end;
-    padding: 2rem;
+    justify-content: flex-start;
+    margin: 2rem 2rem;
   }
   
   .login-header {
@@ -49,72 +51,87 @@ button[type="submit"]{
     font-size: 2.3rem;
     line-height: 2.5rem;
     color: #fff;
-    padding: 2rem;
+    margin: 2rem 0;
   }
   
   .login-form {
     margin: 2rem auto 6rem auto;
-    width: 60%;
+    width: 70%;
     background-color: #fff;
     padding: 2rem;
     box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.1);
   }
 
-@media (min-width: 428px){
+@media (min-width: 480px){
   
   .logo {
-      width: 40%;
+      width: 60%;
+      max-width: 300px;
     }
     
     .login {
-      padding-bottom: 5rem;
+      display: flex;
+      padding-bottom: 3rem;
+      background:linear-gradient(0deg, rgba(54, 54, 54, 0.3), rgba(54, 54, 54, 0.3)), url(../floatmellow_img1_mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     }
   
     .login-heading {
       background-color: transparent;
+      width: fit-content;
+      min-width: 390px;
+      max-width: 454px;
+      justify-content: flex-start;
+      align-self: center;
     }
     
     .login-header {
-      width: 90%;
-      max-width: 800px;
       font-size: 3rem;
       line-height: 3rem;
+      width: 100%;
       justify-self: center;
     }
     
     .login-form {
       margin-top: 3rem;
       width: 80%;
-      max-width: 600px;
+      max-width: 390px;
     }
 }
 
 
 @media (min-width: 1280px){
- 
-  .logo {
-      width: 20%;
-      align-self: initial;
-    }
 
     .login {
+      background: linear-gradient(0deg, rgba(54, 54, 54, 0.3), rgba(54, 54, 54, 0.3)), url(../floatmellow_img1.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
       padding-bottom: 0;
     }
   
     .login-heading {
       display: flex;
       flex-direction: column;
-      align-self: center;
-      width: 60%;
+      align-items: flex-start;
+      max-width: 500px;
     }
     
     .login-header {
-      width: 60%;
-      line-height: 3.5rem;
+      width: 100%;
+      font-size: 3.8rem;
+      line-height: 4rem;
     }
     
     .login-form {
-      width: 20%;
-      margin: 0 35%;
+      width: 100%;
+      max-width: 454px;
+    }
+
+    .login-form-block {
+      display: flex;
+      width: 40%;
+      align-self: center;
+      justify-content: flex-start;
     }
 }

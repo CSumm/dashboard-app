@@ -39,6 +39,7 @@ function passwordValueChange(e){
                 The only flood protection device you'll ever need.
             </h1>
             </div>
+            <div className="login-form-block">
           <form className="login-form" onSubmit={handleSubmit}>
               <fieldset className="vertical-fieldset">
               <label htmlFor="#email">Email</label>
@@ -51,6 +52,7 @@ function passwordValueChange(e){
               </fieldset>
               <button type="submit" className="btn btn-primary">Login</button>
           </form>
+          </div>
         </div>
     );
 }
