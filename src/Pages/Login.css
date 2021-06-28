@@ -2,6 +2,15 @@ button[type="submit"]{
   text-transform: uppercase;
 }
 
+.disclaimer {
+  display: block;
+  width: 85%;
+ font-size: 1rem;
+  color: rgb(255, 255, 255);
+  align-self: center;
+  margin-left: 2rem;
+}
+
 .btn {
   padding: 0.7rem 2.5rem;
 }
@@ -63,6 +72,11 @@ button[type="submit"]{
   }
 
 @media (min-width: 480px){
+
+  .disclaimer {
+    width: 70%;
+    margin: 0 auto;
+  }
   
   .logo {
       width: 60%;
@@ -130,6 +144,7 @@ button[type="submit"]{
 
     .login-form-block {
       display: flex;
+      flex-direction: column;
       width: 40%;
       align-self: center;
       justify-content: flex-start;

@@ -52,6 +52,9 @@ function passwordValueChange(e){
               </fieldset>
               <button type="submit" className="btn btn-primary">Login</button>
           </form>
+          <small className="disclaimer">*This project takes any email and any password 6 letters or more. There are no user database and this page 
+            is just to showcase simple form validation and routing.
+          </small>
           </div>
         </div>
     );
